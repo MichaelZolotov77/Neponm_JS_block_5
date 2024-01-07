@@ -39,3 +39,33 @@ console.log(result2);
 
 const result3 = developers.findIndex((item) => item.skills.includes("React"));
 console.log(result3);
+
+const players = [
+  {
+    id: 1,
+    name: "Andres",
+    surname: "Iniesta",
+    club: "Vissel Cobe",
+  },
+  {
+    id: 2,
+    name: "Eden",
+    surname: "Hazard",
+    club: "Real Madrid",
+  },
+  {
+    id: 3,
+    name: "Mo",
+    surname: "Salah",
+    club: "Liverpool",
+  },
+  {
+    id: 4,
+    name: "Lionel",
+    surname: "Messi",
+    club: "Barcelona",
+  },
+];
+
+const messi = players.find((item) => item.surname === "Messi");
+console.log(messi);
