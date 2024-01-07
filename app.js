@@ -1,28 +1,27 @@
-// FIFO, FILO
+// Immutable
+const arr = [1, 2, 3, 4, 5];
 
-// Queue - first in, first out
-// push/shift
-const arr = [];
-arr.push(4);
-arr.push(7);
-arr.push(9);
+//don't use pop, push, shift, unshift, sort, reverse
+const newArr = arr.slice(0, 4);
+console.log(newArr); // [1, 2, 3, 4]
+const newArr2 = [0, ...arr];
+console.log(newArr2); // [0, 1, 2, 3, 4, 5]
+console.log(arr); // [1, 2, 3, 4, 5]
 
-console.log(arr);
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
 
-arr.shift();
-console.log(arr);
+// obj.d = 4; // mutation
+// obj.a = 10; // mutation
 
-// Stack - first in, last out
-// push/pop
-const arr2 = [];
-arr2.push(1);
-arr2.push(2);
-arr2.push(4);
-arr2.push(5);
+const obj2 = {
+  ...obj,
+  a: 10,
+  d: 4,
+};
 
-console.log(arr2);
-
-arr2.pop();
-arr2.pop();
-
-console.log(arr2);
+console.log(obj2);
+console.log(obj);
