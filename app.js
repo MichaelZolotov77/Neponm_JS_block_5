@@ -1,22 +1,29 @@
-// Mapping
-// map, forEach
+const developers = [
+  {
+    id: 1,
+    fullName: "Anton Petrov",
+    skills: ["HTML", "CSS", "JavaScript", "Git", "React"],
+    salary: 1000,
+  },
+  {
+    id: 2,
+    fullName: "Ivan Ivanov",
+    skills: ["HTML", "CSS", "JavaScript", "Git", "Vue"],
+    salary: 950,
+  },
+  {
+    id: 3,
+    fullName: "Albert Sidorov",
+    skills: ["HTML", "CSS", "JavaScript", "Git", "jQuery"],
+    salary: 850,
+  },
+];
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-
-function print(el, index, array) {
-  console.log(el);
-}
-// const result = numbers.forEach(print);
-// console.log(result);
-
-function doubleNum(num) {
-  return num * 2;
-}
-
-// map() возвращает новым массив не изменяя оригинальный
-const result = numbers.map(doubleNum); //[]
-console.log(result);
-console.log(numbers);
-// то же самое через стрелочную функцию
-const result2 = numbers.map((num) => num * 2);
-console.log(result2);
+const middleDevelopers = developers.map((person) => {
+  return {
+    ...person,
+    skills: [...person.skills, "TypeScript"],
+    salary: person.salary + 500,
+  };
+});
+console.log(middleDevelopers);
