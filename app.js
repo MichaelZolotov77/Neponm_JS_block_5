@@ -1,27 +1,10 @@
-// Immutable
-const arr = [1, 2, 3, 4, 5];
+// Mapping
+// map, forEach
 
-//don't use pop, push, shift, unshift, sort, reverse
-const newArr = arr.slice(0, 4);
-console.log(newArr); // [1, 2, 3, 4]
-const newArr2 = [0, ...arr];
-console.log(newArr2); // [0, 1, 2, 3, 4, 5]
-console.log(arr); // [1, 2, 3, 4, 5]
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const obj = {
-  a: 1,
-  b: 2,
-  c: 3,
-};
-
-// obj.d = 4; // mutation
-// obj.a = 10; // mutation
-
-const obj2 = {
-  ...obj,
-  a: 10,
-  d: 4,
-};
-
-console.log(obj2);
-console.log(obj);
+function print(el) {
+  console.log(el);
+}
+const result = numbers.forEach(print);
+console.log(result);
