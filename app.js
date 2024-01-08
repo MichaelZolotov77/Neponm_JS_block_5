@@ -32,3 +32,10 @@ let y = 20;
 // значения переменных меняем местами
 [y, x] = [x, y];
 console.log(x, y); // 20 10
+
+function getInfo() {
+  return ["BMW", "X3"];
+}
+
+const [carName, carSeries] = getInfo();
+console.log(carName, carSeries);
