@@ -1,52 +1,18 @@
-// Destructuring
-const developer = {
-  id: 1,
-  fullname: "John Doe",
-  skills: ["HTML", "CSS", "JavaScript"],
-  area: "frontend",
-  languages: {
-    english: "B2",
-    spanish: "native",
-    hebrew: "A1",
-  },
-};
+// Стандартные встроенные объекты
 
-let area, id;
-// Если переменные ранее были объявлены, деструктуризацию заключаем в круглые скобки
-({ area, id } = developer);
-console.log(area, id);
+console.log(Number("12"));
+console.log(Number(true)); // 1
+console.log(Number(false)); // 0
+console.log(String(12));
+console.log(Boolean("")); // false
+console.log(Boolean([])); // true
 
-// const {
-//   area: areaDeveloper = "",
-//   id = 2,
-//   languages: { spanish } = {}, // по умолчанию это пустой объект
-//   skills: [, , basicSkill] = [], // по умолчанию это пустой массив
-//   ...otherProp
-// } = developer || {};
-// console.log(basicSkill, otherProp);
+const obj = { a: 1, b: 2, c: 3 };
 
-// Деструктуризация в функциях
-function fn([a, b, c], { x, y }) {}
+console.log(Object.keys(obj)); // ['a', 'b', 'c']
+console.log(Object.values(obj)); // [1, 2, 3]
+console.log(Object.entries(obj)); // [Array(2), Array(2), Array(2)]
 
-const link = {
-  href: "#",
-  title: "simple link",
-  target: "blank",
-  className: "link",
-  id: null,
-  children: {
-    span: {
-      content: "Click me",
-      className: "anchor",
-    },
-  },
-};
-
-const {
-  target,
-  className,
-  children: {
-    span: { content, className: renamed },
-  },
-} = link;
-console.log(target, className, content, renamed);
+console.log(Array.isArray(obj)); // false
+console.log(Array.from("hello")); // ['h', 'e', 'l', 'l', 'o']
+console.log(Array.of("hello", 1, true)); // ['hello', 1, true]
