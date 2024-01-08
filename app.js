@@ -1,7 +1,26 @@
-// Find in collection
-const cities = ["London", "Paris", "Madrid", "Lisboa"];
-console.log(cities.includes("Madrid")); // true
-console.log(cities.indexOf("Paris")); // 1
+// Sort
+const numbers = [7, 3, 35, 6, 2, 8, 20];
+const cities = ["Madrid", "Amsterdam", "Paris", "Berlin", "Kiev"];
+
+numbers.sort((a, b) => a - b);
+console.log(numbers);
+numbers.sort((a, b) => b - a);
+console.log(numbers);
+numbers.reverse();
+console.log(numbers);
+
+cities.sort((a, b) => a - b); // подход для цифр
+console.log(cities);
+
+// подход для букв
+function sorting(a, b) {
+  if (a > b) return 1;
+  if (a < b) return -1;
+  return 0;
+}
+
+cities.sort(sorting);
+console.log(cities);
 
 const developers = [
   {
@@ -30,42 +49,6 @@ const developers = [
   },
 ];
 
-// Возвратит элемент полностью
-const result = developers.find((item) => item.area === "frontend");
-console.log(result);
-
-const result2 = developers.find((item) => item.skills.includes("React"));
-console.log(result2);
-
-const result3 = developers.findIndex((item) => item.skills.includes("React"));
-console.log(result3);
-
-const players = [
-  {
-    id: 1,
-    name: "Andres",
-    surname: "Iniesta",
-    club: "Vissel Cobe",
-  },
-  {
-    id: 2,
-    name: "Eden",
-    surname: "Hazard",
-    club: "Real Madrid",
-  },
-  {
-    id: 3,
-    name: "Mo",
-    surname: "Salah",
-    club: "Liverpool",
-  },
-  {
-    id: 4,
-    name: "Lionel",
-    surname: "Messi",
-    club: "Barcelona",
-  },
-];
-
-const messi = players.find((item) => item.surname === "Messi");
-console.log(messi);
+// Подход для сортировки объектов по значениям ключей
+developers.sort((a, b) => sorting(a.area, b.area));
+console.log(developers);
