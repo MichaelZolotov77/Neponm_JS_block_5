@@ -1,36 +1,34 @@
-// Spread/rest operator
+// Destructuring
 const numbers = [7, 3, 35, 6, 2, 8, 20];
 const cities = ["Madrid", "Amsterdam", "Paris", "Berlin", "Kiev"];
 
-console.log(cities);
-console.log(...cities);
-// используется как оператор распространения
-const arr2 = ["Riga", ...cities, "Moscow"];
-console.log(arr2);
+// Деструктуризация массива
+const [madrid, amst, paris] = cities;
+console.log(madrid, amst, paris);
 
-const dev1 = {
-  id: 1,
-  fullname: "John Doe",
-  skills: ["HTML", "CSS", "JavaScript"],
-  area: "frontend",
-};
+// с пропусками
+const [madrid2, , paris2, , kiev] = cities;
+console.log(madrid2, paris2, kiev);
 
-const dev2 = { ...dev1 };
-dev2.id = 18;
-dev2.fullname = "Mikhail";
-console.log(dev1);
-console.log(dev2);
+// с оператором остатка
+const [madrid3, ams, ...otherCities] = cities;
+console.log(otherCities);
 
-console.log(sum(4, 3));
-console.log(sum(4, 3, 1));
-console.log(sum(4, 3, 1, 2));
+// если данные null
+const cities2 = null;
+const [madrid4 = "Мадрид", ams2 = "Амстердам", ...otherCities2] = cities2 || [];
+console.log(madrid4, ams2, otherCities2);
 
-// ...args [] - массив
-// здесь ... используется как оператор остатка
-function sum(a, b, ...args) {
-  let result = a + b;
-  for (let i = 0; i < args.length; i++) {
-    result += args[i];
-  }
-  return result;
-}
+// вложенный массив
+const numbers2 = [7, [3, 35], 6, 2, 8, 20];
+const [a, [b, c], d] = numbers2;
+console.log(a, b, c, d);
+
+const [a1 = 0, [b1 = 1, c1 = 1] = [], d1 = 0] = cities2 || [];
+console.log(a1, b1, c1, d1);
+
+let x = 10;
+let y = 20;
+// значения переменных меняем местами
+[y, x] = [x, y];
+console.log(x, y); // 20 10
