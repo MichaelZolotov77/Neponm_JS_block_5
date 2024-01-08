@@ -52,3 +52,44 @@ const developers = [
 // Подход для сортировки объектов по значениям ключей
 developers.sort((a, b) => sorting(a.area, b.area));
 console.log(developers);
+
+const food = ["Apple", "Melon", "Banana", "Yogurt", "Orange", "Stawberry"];
+
+const players = [
+  {
+    id: 1,
+    name: "Cristiano",
+    surname: "Ronaldo",
+    club: "Juventus",
+  },
+  {
+    id: 2,
+    name: "Lionel",
+    surname: "Messi",
+    club: "Barcelona",
+  },
+  {
+    id: 3,
+    name: "Karim",
+    surname: "Benzema",
+    club: "Real Madrid",
+  },
+  {
+    id: 4,
+    name: "Maxi",
+    surname: "Gomez",
+    club: "Valencia",
+  },
+  {
+    id: 5,
+    name: "Quincy",
+    surname: "Promes",
+    club: "Spartak",
+  },
+];
+
+food.sort(sorting);
+console.log(food);
+
+players.sort((a, b) => sorting(a.surname, b.surname));
+console.log(players);
