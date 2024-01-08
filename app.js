@@ -11,7 +11,12 @@ const developer = {
   },
 };
 
-// Тоже можно применить оператор остатка, остаток будет объектом
+// Если значение свойства - объект
 const area = "abc";
-const { area: areaDeveloper = "", id = 2, ...otherProp } = developer;
-console.log(area, areaDeveloper, id, otherProp);
+const {
+  area: areaDeveloper = "",
+  id = 2,
+  languages: { spanish },
+  ...otherProp
+} = developer;
+console.log(spanish);
