@@ -24,3 +24,6 @@ console.log(area, id);
 //   ...otherProp
 // } = developer || {};
 // console.log(basicSkill, otherProp);
+
+// Деструктуризация в функциях
+function fn([a, b, c], { x, y }) {}
