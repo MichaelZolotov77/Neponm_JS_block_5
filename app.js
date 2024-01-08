@@ -11,13 +11,13 @@ const developer = {
   },
 };
 
-// Если значение свойства - массив
+// Если данные не придут
 const area = "abc";
 const {
   area: areaDeveloper = "",
   id = 2,
-  languages: { spanish },
-  skills: [, , basicSkill], // если надо третий элемент
+  languages: { spanish } = {}, // по умолчанию это пустой объект
+  skills: [, , basicSkill] = [], // по умолчанию это пустой массив
   ...otherProp
-} = developer;
+} = developer || {};
 console.log(basicSkill, otherProp);
