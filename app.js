@@ -11,7 +11,7 @@ const developer = {
   },
 };
 
-// Если переменная уже существует, то необходимо ее переименовать
+// Тоже можно применить оператор остатка, остаток будет объектом
 const area = "abc";
-const { area: areaDeveloper, id } = developer;
-console.log(area, areaDeveloper, id);
+const { area: areaDeveloper = "", id = 2, ...otherProp } = developer;
+console.log(area, areaDeveloper, id, otherProp);
