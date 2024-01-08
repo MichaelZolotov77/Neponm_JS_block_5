@@ -11,6 +11,7 @@ const developer = {
   },
 };
 
-// Порядок здесь не важен, главное совпадение имен
-const { area, id } = developer;
-console.log(area, id);
+// Если переменная уже существует, то необходимо ее переименовать
+const area = "abc";
+const { area: areaDeveloper, id } = developer;
+console.log(area, areaDeveloper, id);
