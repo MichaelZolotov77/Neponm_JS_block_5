@@ -1,0 +1,8 @@
+{
+  "firstName": "Mikhail",
+  "age": 36,
+  "skills": ["CSS", "JavaScript"],
+  "lahguages": {
+    "key": "value"
+  }
+}
